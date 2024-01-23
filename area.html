@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>area by coordinates</title>
+</head>
+<body>
+<div><img src='fundalula_logo.jpg'></img></div>
+
+<div style="background-color: red; height:40px">
+<center>
+<button onclick= "bearing.html" style="color:white; background-color:orange">Bearing</button>
+<button onclick= "dist.html" style="color:white; background-color:orange">Distance</button>
+<button onclick= "ve.html" style="color:white; background-color:orange">Coordinates Conversion</button>
+</center>
+</div>
+
+<div style="background-color: rgb(150, 150, 255">
+<button onclick="area()" style="color:white; background-color:blue">Compute Area</button>
+<br><br>
+<div>
+<fieldset style="background-color: rgb(255, 255, 220)"><legend style="color:green">Insert coordinates</legend><table>
+<table>
+<tr>
+<td>Latitude</td><td>Longitude</td>
+</tr><tr>
+<td><input id='lat1' type='number'></td><td><input id='lon1' type='number'></td>
+</tr><tr>
+<td><input id='lat2' type='number'></td><td><input id='lon2' type='number'></td>
+</tr><tr>
+<td><input id='lat3' type='number'></td><td><input id='lon3' type='number'></td>
+</tr><tr>
+<td><input id='lat4' type='number'></td><td><input id='lon4' type='number'></td>
+</tr><tr>
+<td><input id='lat5' type='number'></td><td><input id='lon5' type='number'></td>
+</tr><tr>
+<td><input id='lat6' type='number'></td><td><input id='lon6' type='number'></td>
+</tr><tr>
+<td><input id='lat7' type='number'></td><td><input id='lon7' type='number'></td>
+</tr><tr>
+<td><input id='lat8' type='number'></td><td><input id='lon8' type='number'></td>
+</tr><tr>
+<td><input id='lat9' type='number'></td><td><input id='lon9' type='number'></td>
+</tr><tr>
+<td><input id='lat10' type='number'></td><td><input id='lon10' type='number'></td>
+</tr>
+</table>
+</fieldset>
+</div>
+
+
+<div>
+<fieldset style="background-color: rgb(255, 255, 255)"><legend>Output</legend><p id="output"></p></fieldset>
+</div>
+</div>
+</body>
+
+<script>
+function area() {
+var lat1 = document.getElementById("lat1").value;
+var lat2 = document.getElementById("lat2").value;
+var lat3 = document.getElementById("lat3").value;
+var lat4 = document.getElementById("lat4").value;
+var lat5 = document.getElementById("lat5").value;
+var lat6 = document.getElementById("lat6").value;
+var lat7 = document.getElementById("lat7").value;
+var lat8 = document.getElementById("lat8").value;
+var lat9 = document.getElementById("lat9").value;
+var lat10 = document.getElementById("lat10").value;
+
+var lon1 = document.getElementById("lon1").value;
+var lon2 = document.getElementById("lon2").value;
+var lon3 = document.getElementById("lon3").value;
+var lon4 = document.getElementById("lon4").value;
+var lon5 = document.getElementById("lon5").value;
+var lon6 = document.getElementById("lon6").value;
+var lon7 = document.getElementById("lon7").value;
+var lon8 = document.getElementById("lon8").value;
+var lon9 = document.getElementById("lon9").value;
+var lon10 = document.getElementById("lon10").value;
+
+var min_lon_21 = 18;
+var max_lon_21 = 20;
+var R = 6371000;
+
+var x1 = Math.pow(R, 1)*Math.pow(lon1, 1)*Math.PI/Math.pow(180, 1);
+var x2 = Math.pow(R, 1)*Math.pow(lon2, 1)*Math.PI/Math.pow(180, 1);
+var x3 = Math.pow(R, 1)*Math.pow(lon3, 1)*Math.PI/Math.pow(180, 1);
+var x4 = Math.pow(R, 1)*Math.pow(lon4, 1)*Math.PI/Math.pow(180, 1);
+var x5 = Math.pow(R, 1)*Math.pow(lon5, 1)*Math.PI/Math.pow(180, 1);
+var x6 = Math.pow(R, 1)*Math.pow(lon6, 1)*Math.PI/Math.pow(180, 1);
+var x7 = Math.pow(R, 1)*Math.pow(lon7, 1)*Math.PI/Math.pow(180, 1);
+var x8 = Math.pow(R, 1)*Math.pow(lon8, 1)*Math.PI/Math.pow(180, 1);
+var x9 = Math.pow(R, 1)*Math.pow(lon9, 1)*Math.PI/Math.pow(180, 1);
+var x10 = Math.pow(R, 1)*Math.pow(lon10, 1)*Math.PI/Math.pow(180, 1);
+
+var y1 = Math.pow(R,1)*Math.tan((Math.pow(lat1, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y2 = Math.pow(R,1)*Math.tan((Math.pow(lat2, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y3 = Math.pow(R,1)*Math.tan((Math.pow(lat3, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y4 = Math.pow(R,1)*Math.tan((Math.pow(lat4, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y5 = Math.pow(R,1)*Math.tan((Math.pow(lat5, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y6 = Math.pow(R,1)*Math.tan((Math.pow(lat6, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y7 = Math.pow(R,1)*Math.tan((Math.pow(lat7, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y8 = Math.pow(R,1)*Math.tan((Math.pow(lat8, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y9 = Math.pow(R,1)*Math.tan((Math.pow(lat9, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+var y10 = Math.pow(R,1)*Math.tan((Math.pow(lat10, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4); 
+
+var det10 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y5, 1) - Math.pow(x5, 1)*Math.pow(y4, 1)) + 
+(Math.pow(x5, 1)*Math.pow(y6, 1) - Math.pow(x6, 1)*Math.pow(y5, 1)) + (Math.pow(x6, 1)*Math.pow(y7, 1) - Math.pow(x7, 1)*Math.pow(y6, 1)) + 
+(Math.pow(x7, 1)*Math.pow(y8, 1) - Math.pow(x8, 1)*Math.pow(y7, 1)) + (Math.pow(x8, 1)*Math.pow(y9, 1) - Math.pow(x9, 1)*Math.pow(y8, 1)) + 
+(Math.pow(x9, 1)*Math.pow(y10, 1) - Math.pow(x10, 1)*Math.pow(y9, 1)) + (Math.pow(x10, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y10, 1)));
+
+var det9 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y5, 1) - Math.pow(x5, 1)*Math.pow(y4, 1)) + 
+(Math.pow(x5, 1)*Math.pow(y6, 1) - Math.pow(x6, 1)*Math.pow(y5, 1)) + (Math.pow(x6, 1)*Math.pow(y7, 1) - Math.pow(x7, 1)*Math.pow(y6, 1)) + 
+(Math.pow(x7, 1)*Math.pow(y8, 1) - Math.pow(x8, 1)*Math.pow(y7, 1)) + (Math.pow(x8, 1)*Math.pow(y9, 1) - Math.pow(x9, 1)*Math.pow(y8, 1)) +
+(Math.pow(x9, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y9, 1)));
+
+var det8 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y5, 1) - Math.pow(x5, 1)*Math.pow(y4, 1)) + 
+(Math.pow(x5, 1)*Math.pow(y6, 1) - Math.pow(x6, 1)*Math.pow(y5, 1)) + (Math.pow(x6, 1)*Math.pow(y7, 1) - Math.pow(x7, 1)*Math.pow(y6, 1)) + 
+(Math.pow(x7, 1)*Math.pow(y8, 1) - Math.pow(x8, 1)*Math.pow(y7, 1)) + (Math.pow(x8, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y8, 1)));
+
+var det7 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y5, 1) - Math.pow(x5, 1)*Math.pow(y4, 1)) + 
+(Math.pow(x5, 1)*Math.pow(y6, 1) - Math.pow(x6, 1)*Math.pow(y5, 1)) + (Math.pow(x6, 1)*Math.pow(y7, 1) - Math.pow(x7, 1)*Math.pow(y6, 1)) + 
+(Math.pow(x7, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y7, 1)));
+
+var det6 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y5, 1) - Math.pow(x5, 1)*Math.pow(y4, 1)) + 
+(Math.pow(x5, 1)*Math.pow(y6, 1) - Math.pow(x6, 1)*Math.pow(y5, 1)) + (Math.pow(x6, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y6, 1)));
+
+var det5 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y5, 1) - Math.pow(x5, 1)*Math.pow(y4, 1)) + 
+(Math.pow(x5, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y5, 1)));
+
+var det4 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y4, 1) - Math.pow(x4, 1)*Math.pow(y3, 1)) + (Math.pow(x4, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y4, 1)));
+
+var det3 = Math.abs(
+(Math.pow(x1, 1)*Math.pow(y2, 1) - Math.pow(x2, 1)*Math.pow(y1, 1)) + (Math.pow(x2, 1)*Math.pow(y3, 1) - Math.pow(x3, 1)*Math.pow(y2, 1)) + 
+(Math.pow(x3, 1)*Math.pow(y1, 1) - Math.pow(x1, 1)*Math.pow(y3, 1)));
+
+var area_calc10 = Math.pow(0.5, 1)*Math.pow(det10, 1);
+var area_calc9 = Math.pow(0.5, 1)*Math.pow(det9, 1);
+var area_calc8 = Math.pow(0.5, 1)*Math.pow(det8, 1);
+var area_calc7 = Math.pow(0.5, 1)*Math.pow(det7, 1);
+var area_calc6 = Math.pow(0.5, 1)*Math.pow(det6, 1);
+var area_calc5 = Math.pow(0.5, 1)*Math.pow(det5, 1);
+var area_calc4 = Math.pow(0.5, 1)*Math.pow(det4, 1);
+var area_calc3 = Math.pow(0.5, 1)*Math.pow(det3, 1);
+
+if (lat1 == "" || lat2 == "" || lat3 == "" || lon1 == "" || lon2 == "" || lon3 == "") {
+
+document.getElementById("output").innerHTML = "Please Insert Values in at least three first cells!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+	
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lat8 !="" && lat9 != "" && lat10 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "" && lon8 != "" && lon9 != "" && lon10 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21 || lon5 > max_lon_21 || lon5 < min_lon_21 || lon6 > max_lon_21 || lon6 < min_lon_21 || lon7 > max_lon_21 || lon7 < min_lon_21 || lon8 > max_lon_21 || lon8 < min_lon_21 || lon9 > max_lon_21 || lon9 < min_lon_21 || lon10 > max_lon_21 || lon10 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lat8 != "" && lat9 != "" && lat10 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "" && lon8 != "" && lon9 != "" && lon10 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc10;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lat8 !="" && lat9 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "" && lon8 != "" && lon9 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21 || lon5 > max_lon_21 || lon5 < min_lon_21 || lon6 > max_lon_21 || lon6 < min_lon_21 || lon7 > max_lon_21 || lon7 < min_lon_21 || lon8 > max_lon_21 || lon8 < min_lon_21 || lon9 > max_lon_21 || lon9 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lat8 != "" && lat9 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "" && lon8 != "" && lon9 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc9;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lat8 !="" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "" && lon8 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21 || lon5 > max_lon_21 || lon5 < min_lon_21 || lon6 > max_lon_21 || lon6 < min_lon_21 || lon7 > max_lon_21 || lon7 < min_lon_21 || lon8 > max_lon_21 || lon8 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lat8 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "" && lon8 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc8;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21 || lon5 > max_lon_21 || lon5 < min_lon_21 || lon6 > max_lon_21 || lon6 < min_lon_21 || lon7 > max_lon_21 || lon7 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lat7 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "" && lon7 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc7;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21 || lon5 > max_lon_21 || lon5 < min_lon_21 || lon6 > max_lon_21 || lon6 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lat6 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "" && lon6 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc6;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21 || lon5 > max_lon_21 || lon5 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lat5 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "" && lon5 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc5;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21 || lon4 > max_lon_21 || lon4 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lat4 != "" && lon1 != "" && lon2 != "" && lon3 != "" && lon4 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc4;
+
+}else if ((lat1 != "" && lat2 != "" && lat3 != "" && lon1 != "" && lon2 != "" && lon3 != "") && (lon1 > max_lon_21 || lon1 < min_lon_21 || lon2 > max_lon_21 || lon2 < min_lon_21 || lon3 > max_lon_21 || lon3 < min_lon_21)) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else if (lat1 != "" && lat2 != "" && lat3 != "" && lon1 != "" && lon2 != "" && lon3 != "") {
+document.getElementById("output").innerHTML = "AREA = " + area_calc3;
+
+}else
+document.getElementById('output').innerHTML = 'Error';
+}
+
+area();
+
+</script>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<title>Magnetic Declination</title>
+</head>
+<body>
+<div><img src='fundalula_logo.jpg'></img></div>
+
+<div style="background-color: red; height:40px">
+<div style="background-color: red; height:40px">
+<div style="background-color: red; height:40px">
+<div style="background-color: red; height:40px">
+<center>
+<button onclick= "area.html" style="color:white; background-color:blue">Area</button>
+<button onclick= "bearing.html" style="color:white; background-color:blue">Bearing</button>
+<button onclick= "ve.html" style="color:white; background-color:blue">Coordinates Conversion</button>
+</center>
+</div>
+
+<div style="background-color: rgb(150, 150, 255">
+<button onclick="magnetic()" style="color:white; background-color:blue">Compute MD</button>
+<br><br>
+
+<div>
+<fieldset style="background-color: rgb(255, 255, 220)">
+<table>
+<tr>
+<td>Initial Year</td><td><input id='yr1' type='number'></td>
+</tr><tr>
+<td>Current Year</td><td><input id='yr2' type='number'></td>
+</tr><tr>
+<td>Annual Change</td><td><input id='ac' type='number'></td>
+</tr><tr>
+<td>Initial MD</td><td><input style="width: 80px; text-align: center" type="text" id="mddeg" placeholder="DD"> <input style="width: 80px; text-align: center" type="text" id="mdmin" placeholder="MM"></td>
+</tr>
+</table>
+
+</fieldset>
+</div>
+<div>
+<fieldset style="background-color: rgb(255, 255, 255)"><legend>Output</legend><p id="output"></p></fieldset>
+</div>
+</div>
+</body>
+
+<script>
+function magnetic() {
+var yr1 = document.getElementById("yr1").value;
+var yr2 = document.getElementById("yr2").value;
+var ac = document.getElementById("ac").value;
+var mddeg = document.getElementById("mddeg").value;
+var mdmin = document.getElementById("mdmin").value;
+
+var difference_in_years = Math.pow(yr2, 1) - Math.pow(yr1, 1);
+var total_change = Math.pow(difference_in_years, 1)*Math.pow(ac, 1);
+
+var md1 = Math.pow(mddeg, 1) + Math.pow(mdmin, 1)/Math.pow(60, 1) + Math.pow(total_change, 1)/Math.pow(60, 1); // if total change is less than 60 minutes
+var md1d = Math.floor(md1);
+var md1m = Math.round((Math.pow(md1, 1) - Math.pow(md1d, 1))*Math.pow(60, 1));
+var md1dm = md1d + " " + ":" + " " + md1m;
+
+var md2 = Math.pow(mddeg, 1) + Math.pow(mdmin, 1)/Math.pow(60, 1) + (Math.pow(total_change, 1) - Math.pow(60, 1))/Math.pow(60, 1) + Math.pow(1, 1); // if the total change is greater than or equals to 60 minutes but less than 120 minutes
+var md2d = Math.floor(md2);
+var md2m = Math.round((Math.pow(md2, 1) - Math.pow(md2d, 1))*Math.pow(60, 1));
+var md2dm = md2d + " " + ":" + " " + md2m;
+
+var md3 = Math.pow(mddeg, 1) + Math.pow(mdmin, 1)/Math.pow(60, 1) + (Math.pow(total_change, 1) - Math.pow(120, 1))/Math.pow(60, 1) + Math.pow(2, 1); // if the total change is greater than or equals to 120 minutes but less than 180 minutes
+var md3d = Math.floor(md3);
+var md3m = Math.round((Math.pow(md3, 1) - Math.pow(md3d, 1))*Math.pow(60, 1));
+var md3dm = md3d + " " + ":" + " " + md3m;
+
+var md4 = Math.pow(mddeg, 1) + Math.pow(mdmin, 1)/Math.pow(60, 1) + (Math.pow(total_change, 1) - Math.pow(180, 1))/Math.pow(60, 1) + Math.pow(3, 1); // if the total change is greater than or equals to 180 minutes but less than 240 minutes
+var md4d = Math.floor(md4);
+var md4m = Math.round((Math.pow(md4, 1) - Math.pow(md4d, 1))*Math.pow(60, 1));
+var md4dm = md4d + " " + ":" + " " + md4m;
+
+var md5 = Math.pow(mddeg, 1) + Math.pow(mdmin, 1)/Math.pow(60, 1) + (Math.pow(total_change, 1) - Math.pow(240, 1))/Math.pow(60, 1) + Math.pow(4, 1); // if the total change is greater than or equals to 240 minutes but less than 300 minutes
+var md5d = Math.floor(md5);
+var md5m = Math.round((Math.pow(md5, 1) - Math.pow(md5d, 1))*Math.pow(60, 1));
+var md5dm = md5d + " " + ":" + " " + md5m;
+
+var md6 = Math.pow(mddeg, 1) + Math.pow(mdmin, 1)/Math.pow(60, 1) + (Math.pow(total_change, 1) - Math.pow(300, 1))/Math.pow(60, 1) + Math.pow(5, 1); // if the total change is greater than or equals to 300 minutes but less than 360 minutes
+var md6d = Math.floor(md6);
+var md6m = Math.round((Math.pow(md6, 1) - Math.pow(md6d, 1))*Math.pow(60, 1));
+var md6dm = md6d + " " + ":" + " " + md6m;
+
+if (yr1 == "" || yr2 == "" || ac == "" || mddeg == "" || mdmin == "") {
+document.getElementById("output").innerHTML = "Please Insert Values in all the cells!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+
+}else if (mddeg >= 360 || md1d >= 360 || md2d >= 360 || md3d >= 360 || md4d >= 360 || md5d >= 360 || md6d >= 360) {
+document.getElementById("output").innerHTML = "The maximum value of degrees should not be greater than 360!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+
+}else if (mdmin > 60) {
+document.getElementById("output").innerHTML = "The maximum value of minutes should not be greater than 60!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+
+}else if (total_change < 60) {
+document.getElementById('output').innerHTML = md1dm;
+
+}else if (total_change >= 60 && total_change < 120) {
+document.getElementById('output').innerHTML = md2dm;
+
+}else if (total_change >= 120 && total_change < 180) {
+document.getElementById('output').innerHTML = md3dm;
+
+}else if (total_change >= 180 && total_change < 240) {
+document.getElementById('output').innerHTML = md4dm;
+
+}else if (total_change >= 240 && total_change < 300) {
+document.getElementById('output').innerHTML = md5dm;
+
+}else if (total_change >= 300 && total_change < 360) {
+document.getElementById('output').innerHTML = md6dm;
+
+}else
+document.getElementById('output').innerHTML = "The total change is too extreme for Magnetic Declination Computation!";
+}
+
+magnetic();
+
+
+
+</script>
+</html>

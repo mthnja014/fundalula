@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<title>distance</title>
+</head>
+<body>
+<div><img src='fundalula_logo.jpg'></img></div>
+
+<div style="background-color: red; height:40px">
+<div style="background-color: red; height:40px">
+<div style="background-color: red; height:40px">
+<div style="background-color: red; height:40px">
+<center>
+<button onclick= "area.html" style="color:white; background-color:blue">Area</button>
+<button onclick= "bearing.html" style="color:white; background-color:blue">Bearing</button>
+<button onclick= "ve.html" style="color:white; background-color:blue">Coordinates Conversion</button>
+</center>
+</div>
+
+<div style="background-color: rgb(150, 150, 255">
+<button onclick="distance()" style="color:white; background-color:blue">Compute distance</button>
+<br><br>
+<div>
+<fieldset style="background-color: rgb(255, 255, 220)"><legend style="color:green">Start coordinates</legend><table>
+<table>
+<tr>
+<td>Latitude</td><td><input id='lat1' type='number'></td>
+</tr><tr>
+<td>Longitude</td><td><input id='lon1' type='number'></td>
+</tr>
+</table>
+</fieldset>
+</div>
+<div>
+<fieldset style="background-color: rgb(255, 255, 220)"><legend style="color:green">End coordinates</legend><table>
+<table>
+<tr>
+<td>Latitude</td><td><input id='lat2' type='number'></td>
+</tr><tr>
+<td>Longitude</td><td><input id='lon2' type='number'></td>
+</tr>
+</table>
+</fieldset>
+</div>
+<div>
+<fieldset style="background-color: rgb(255, 255, 255)"><legend>Output</legend><p id="output"></p></fieldset>
+</div>
+</div>
+</body>
+
+<script>
+function distance() {
+var lat1 = document.getElementById("lat1").value;
+var lon1 = document.getElementById("lon1").value;
+var lat2 = document.getElementById("lat2").value;
+var lon2 = document.getElementById("lon2").value;
+
+var R = 6371000;
+var min_lon_21 = 18;
+var max_lon_21 = 20;
+
+var x1 = Math.pow(R, 1)*Math.pow(lon1, 1)*Math.PI/Math.pow(180, 1);
+var y1 = Math.pow(R,1)*Math.tan((Math.pow(lat1, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+
+var x2 = Math.pow(R, 1)*Math.pow(lon2, 1)*Math.PI/Math.pow(180, 1);
+var y2 = Math.pow(R,1)*Math.tan((Math.pow(lat2, 1)*Math.PI/Math.pow(180, 1))/Math.pow(2, 1) + Math.PI/4);
+
+var diffy = Math.pow(y2, 1) - Math.pow(y1, 1);
+var diffx = Math.pow(x2, 1) - Math.pow(x1, 1);
+
+var distance = Math.sqrt(Math.pow((diffy), 2) + Math.pow((diffx), 2));
+var distance = distance.toFixed(2);
+
+if (lat1 == "" || lon1 == "" || lat2 == "" || lon2 == "") {
+
+document.getElementById("output").innerHTML = "Please Insert Values in all the cells!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+	
+}else if (lon1 > max_lon_21 || lon2 < min_lon_21 || lon2 > max_lon_21 || lon1 < min_lon_21) {
+document.getElementById("output").innerHTML = "The longitude values for this zone must be between 18 and 20 degrees!";
+setTimeout(function () {
+document.getElementById("output").innerHTML = "";
+}, 3000);
+}else
+document.getElementById('output').innerHTML = distance;
+}
+
+distance();
+
+
+
+</script>
+</html>

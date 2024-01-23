@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Area of Polygon</title>
+</head>
+	<style>
+	#myCanvas {
+	position: absolute;
+	top: 10px;
+	}
+	
+	#pht {
+	position: absolute;
+	top: 10px;	
+	}
+	
+	#outp {
+	position: absolute;
+	top: 600px;
+	}
+	
+	#btn {
+	position: absolute;
+	top: 600px;
+	}
+	
+	#result {
+	position: absolute;
+	top: 650px;
+	}
+	</style>
+<body>
+<img src='2627BB_1_50-000-Topo-Map_GEO.jpg' id='pht' width='419' height='579'></img>
+<canvas id='myCanvas' width='419cm' height='579' style='border: 1px;'></canvas>
+    <button onclick="calculateArea()" id='btn'>Calculate Area</button>
+    <div id="result"></div>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        var isDrawing = false;
+        var points = [];
+
+        canvas.addEventListener('mousedown', handleMouseDown);
+        canvas.addEventListener('mousemove', handleMouseMove);
+        canvas.addEventListener('mouseup', handleMouseUp);
+
+        function handleMouseDown() {
+            isDrawing = true;
+            points = [];
+            addPoint();
+        }
+
+        function handleMouseMove() {
+            if (isDrawing) {
+                addPoint();
+                drawArea();
+            }
+        }
+
+        function handleMouseUp() {
+            isDrawing = false;
+        }
+
+        function addPoint() {
+            var rect = canvas.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+            points.push({ x, y });
+        }
+
+        function drawArea() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (points.length > 1) {
+                ctx.beginPath();
+                ctx.moveTo(points[0].x, points[0].y);
+
+                for (let i = 1; i < points.length; i++) {
+                    ctx.lineTo(points[i].x, points[i].y);
+                }
+
+                ctx.closePath();
+                ctx.fillStyle = 'rgba(0, 0, 255, 0.3)';
+                ctx.fill();
+                ctx.stroke();
+            }
+        }
+
+        function calculateArea() {
+            if (points.length < 3) {
+                alert('At least three points are required to calculate the area.');
+                return;
+            }
+
+            var area = calculatePolygonArea(points);
+            document.getElementById('result').innerHTML = 'Area: ' + area.toFixed(2) + ' square units';
+        }
+
+        function calculatePolygonArea(vertices) {
+            let area = 0;
+
+            for (let i = 0; i < vertices.length - 1; i++) {
+                area += (vertices[i].x * vertices[i + 1].y - vertices[i + 1].x * vertices[i].y);
+            }
+
+            // Add the last edge
+            area += (vertices[vertices.length - 1].x * vertices[0].y - vertices[0].x * vertices[vertices.length - 1].y);
+
+            // Take the absolute value and divide by 2
+            area = Math.abs(area) / Math.pow(2, 1);
+
+            return area;
+        }
+    </script>
+</body>
+</html>
