@@ -1,46 +1,360 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>home</title>
-        <style>
-            #pr {
-                font-weight: 900;
-                font-size: 20%;
-                font-family: "Arial";
-                font-color: orange;
-                position: absolute;
-                top: 40%;
-            }
-            #fl {
-                height: 200px;
-            }
-            #topo {
-                height: 300px;
-                border-radius: 10%;
-                position: absolute;
-                top:30%;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calibri">
+    <title>FundaLula</title>
+    <style>
+        .pageContainer {
+            width: 21cm;
+            height: 29.7cm;
+            border: 1px solid rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            padding-bottom: 2px;
+            position: relative;
+            left: 25%;
+        }
+
+        .pageContainerl {
+            width: 29.7cm;
+            height: 21cm;
+            border: 1px solid rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            padding-bottom: 2px;
+            position: relative;
+            left: 15%;
+        }
+
+        #pageNumber {
+            position: absolute;
+            bottom: 1cm;
+            right: 50px;
+        }
+
+        #copyRight {
+            position: absolute;
+            top: 28.5cm;
+            left: 50px;
+            color: rgb(200, 200, 200);
+            font: 7pt 'Calibri', sans-serif;
+        }
+
+        #footer-img2 {
+            position: absolute;
+            top: 29.5cm;
+            right: 50px;
+            height: 0.5cm;
+            width: 2.5cm,
+        }
+
+        #headerT {
+        font: 16pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        margin-top: 2.45cm;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        }
+
+        #headerTT {
+        font: 16pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        margin-top: 2.45cm;
+        margin-bottom: 2.45cm;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        }
+
+        #headerTTT {
+        font: 16pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        font-weight: bolder;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        }
+
+        #headerT1 {
+        font: 14pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        margin-top: -0.4cm;
+        color: rgb(0, 0, 0);
+        }
+
+        #headerT2 {
+        font: 14pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        margin-top: 2.45cm;
+        color: rgb(0, 0, 0);
+        }
+
+        #bodyT {
+        font: 11pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        margin-top: -0.5cm;
+        color: rgb(0, 0, 0);
+        }
+
+        #bodyT1 {
+        font: 11pt 'Calibri', sans-serif;
+        line-height: 1.5;
+        margin-left: 3.17cm;
+        margin-right: 3.17cm;
+        margin-top: 2.45cm;
+        margin-bottom: 2.45cm;
+        color: rgb(0, 0, 0);
+        }
+
+        body {
+            background-color: rgb(255, 255, 200);
+        }
+        #top-rib {
+            height: 100px;
+            width: 20px;
+            position: fixed;
+        }
+
+        #menu {
+            border-radius: 2%;
+            border: 1px solid rgb(200, 200, 200);
+            margin-left: 20px;
+            background-image: url("C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/background.jpg");
+            overflow: scroll;
+            height: auto;
+            border: 1px solid black;
+            position: fixed;
+            top: 7%;
+        }
+
+        #intro {
+            height: 86vh;
+            width: 88%;
+            border-radius: 2%;
+            border: 1px solid rgb(200, 200, 200);
+            margin: 0% 0% 0% 15%;
+            position: fixed;
+            top: 7%;
+            overflow: scroll;
+            height: 800px;
+            border: 1px solid black;
+            background: rgb(255, 255, 240);
+
+        
+        }
+        #legend_menu {
+            color: rgb(0, 0, 0);
+            font-size: 100%;
+            font-family: 'Calibri', sans-serif;
+        }
+
+        #mid_btn {
+            background-color: none;
+            border: none;
+            height: 50px;
+            width: 150px;
+        }
+
+        #tropical_btn {
+            background-color: none;
+            border: none;
+            height: 50px;
+            width: 150px;
+        }
+
+        #maps {
+            color: rgb(255, 255, 255);
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 0%;
+            border-radius: 5%;
+            background-color: rgb(0, 0, 255, 0.5);
+        }
+
+            #tropical{
+            color: rgb(255, 255, 255);
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 0%;
+            border-radius: 5%;
+            background-color: rgb(0, 0, 255, 0.5);
             }
 
-            #topo-btn {
-                height: 0px;
-                width: 0px;
-                position: absolute;
-                top:30%;
-                border: none;
-                background: none;
+
+        #content-img {
+            margin-left: 8px;
+            height: 50px;
+            width: 150px;
+        }
+
+        #topo {
+                height: 100px;
+                width: 100px;
+                border-radius: 10%;
             }
-            body {
-                 background-image: url("background.jpg");
+
+            li {
+                margin-left: 50px;
+                margin-right: 50px;
             }
-        </style>
-    </head>
-    <body>
-        <center><img id="fl"; src="fundalula_logo.jpg"></img></center>
-        <div>
-            <button type="button" id="topo-btn" onclick="location.href='bearing.html'"><img src="topo.jpg"  id="topo"></img></button>
+
+            table, th, td {
+                border: 0.1px solid;
+                margin-left: 3.17cm;
+                margin-right: 3.17cm;
+                margin-bottom: 2.45cm;
+            }
+
+            li {
+                margin-left: -0.1cm;
+            }
+
+            #fig2 {
+                height: 10cm;
+                width: 17cm;
+            }
+            #fig3 {
+                height: 10cm;
+                width: 15cm;
+            }
+
+    </style>
+</head>
+
+<body>
+    <div id="top-rib">
+        <img src= "C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/top_rib.jpg"></img>
+    </div>
+
+    <fieldset id="menu"><legend id="legend_menu">Menu</legend>
+        <div><button type="button" id="mid_btn" onclick="mapsFunction()"><img src="C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/maps.jpg" id="content-img"></img></button>
+            <p id="midp"></p>
         </div>
-        <div>
-            <p id="pr">TOPOGRAPHIC</p>
+        <div><button type="button" id="tropical_btn" onclick="lessonsFunction()"><img id="content-img" src="C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/lessons.jpg"></img></button>
+            <p id="tropp"></p>
         </div>
-    </body>
+        <div><button type="button" id="subtr_btn" onclick="multimediaFunction()"><img id="content-img" src="C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/multimedia.jpg"></img></button>
+            <p id="subtrop"></p>
+        </div>
+        <div><button type="button" id="subtr_btn" onclick="documentsFunction()"><img id="content-img" src="C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/documents.jpg"></img></button>
+            <p id="subtrop"></p>
+        </div>
+    </fieldset> 
+
+   <fieldset id="intro"><legend id="legend_menu">Content</legend>
+    <div class="pageContainer">
+  <p id="page1"></p>
+</div>
+
+<p id="page2"></p>
+<p id="page3"></p>
+<p id="page4"></p>
+<p id="page5"></p>
+<p id="page6"></p>
+<p id="page7"></p>
+<p id="page8"></p>
+<p id="page9"></p>
+
+<br>
+   </fieldset>
+</body>
+
+<script type="text/javascript">
+ 
+ // create json
+ var data = {
+    "maps":
+    `{"maps_content": "<button onclick='midLatitudeMaps()' id='maps'>Mid Latitude Cyclones Maps</button><br><button id='maps' onclick='tropicalMaps()'>Tropical Cyclones Maps</button><br><button id='maps' onclick='subTropicalMaps()'>Sub-tropical Cyclones Maps</button>"}`,
+
+    "lessons": 
+    `{"lessons_content": "<button onclick='midLatitudeLesson1()' id='maps'>Teacher's Notes</button><br><button id='maps' onclick='tropicalMaps()'>Slides</button><br><button id='maps' onclick='subTropicalMaps()'></button>"}`,
+
+    //Teacher notes
+
+    "teacher_notes":
+    `{"teacher_notes1": "<p id='headerT'><b>Table of Contents</b></p><div id='bodyT'><p>Declaration .................................................................................................................................i<br>Table of Contents .......................................................................................................................ii<br>List of Figures ............................................................................................................................iii</P>",
+    
+    "teacher_notes2": "<p id='bodyT'></p>",
+
+    "teacher_notes3": "<p id='headerT'><b>List of Figures</b></p>",
+    
+    "teacher_notes4": "<p id='headerT'><b>List of Abbreviations and Acronyms</b></p>",
+
+    "teacher_notes5": "<p id='headerT'><b>Definition of Terms</b></p>",
+
+    "teacher_notes6": "<p id='headerT'><b>1. Lesson Framework</b></p><br><p id='headerT1'><b>1.1 Lesson Time</b></br></p><p id='bodyT'><i>This lesson is approximately 90 minutes.</i></p><p id='headerT1'><b>1.2 Lesson Resources<b></p><p id='bodyT'></p>",
+    
+    "teacher_notes7": "<p id='headerT2'><b>1.3 Lesson At Glence</b></p><p id='bodyT'><table><tr><td id='bodyT'><b>Topic</td><td><b>Slides</td><td id='bodyT'><b>Activities</td><td id='bodyT'><b>Lesson Summary</b></td></tr><tr><td id='bodyT'>Topic 1: Mid-latitude Cyclones</td><td id=bodyT>Slide 5: Area of development<br>Slide 6: Synonyms <br>Slide 7: Conditions to form <br>Slide 9: Characteristics<br>Slide 10 - 14: Stages of development<br>Slide 15: Synoptic Map<br>Slide 16 - 17: Types of fronts<br>Slide 18 - 20: Types of occlusion fronts <br>Slide 21: Impact</td><td id='bodyT'>Activity 1: Mid-Latitude Cyclones<br>Homework: Page 2 - 3</td><td id='bodyT'>Characteristics, area of development, ideal conditions, and the synonyms. The stages of development. How to recognize these cyclones on a synoptic map and the impact.</tr><tr><td id='bodyT'>Tropical Cyclones</td><td id='bodyT'>Slide 23: Area of development<br>Slide 24: Different names for different regions<br>Slide 25: Conditions to form<br>Slide 26: Characteristics<br>Slide 27 - 31: Stages of development<br>Slide 32: Synoptic Map<br>Slide 33: Cross section<br>Slide 34: In class activity</td><td id='bodyT'>Activity 2: Tropical Cyclones<br>Homework: Page 4 - 5</td><td id='bodyT'>Characteristics, area of development and the synonyms. How to recognize these cyclones on a synoptic map as well as the stages of development.</td></tr></table></p>",
+
+    "teacher_notes8": "<p id='headerT'> </p><table><tr><td id='bodyT'></td><td id='bodyT'><br>Slide 35: Impact<br>Slide 36: Minimizing impact</td><td id='bodyT'></td><td id='bodyT'></td></tr><tr><td id ='bodyT'>Subtropical<br> anticyclones and<br> associated weather<br> conditions</td><td id='bodyT'>Slide 38: Three main factors that influence the weather in SA.<br>Slide 39: Characteristics <br>Slide 40: Image of the three anticyclones in SA<br>Slide 41 - 44: Anticyclones<br>explained in detail.<br>Slide 45: Cross section<br>Slide 46: Synoptic weather map<br>Slide 51 - 52: Line thunderstorms and moisture fronts<br>Slide 53 - 54: Coastal low-pressure cells<br>Slide 55 - 56: Berg winds<br>Slide 57 - 59: Synoptic maps of summer and winter</td><td id='bodyT'>Activity 3: Subtropical Anticyclones<br>Homework: Page 6 - 7</td><td id='bodyT'>Explains the three anticyclones found near South Africa and how they influence the weather. Line thunderstorms, Moisture fronts and Berg winds.</td></tr></table></P>",
+
+    "teacher_notes9": "<p id='headerT2'><b>1.4 Objectives</b></p><p id='bodyT'>After the topics has been done the student should be able to:<ol id='bodyT'><li>Name the characteristics, area of development, the synonyms, and the ideal conditions for each cyclone.</li><li>To recognize the different stages of development for Mid-latitude cyclones and Tropical cyclones.</li><li>Identify the cyclones on a synoptic map and answer questions accordingly.</li><li>Tell what impact each cyclone has (good and bad) and how to reduce the impact of tropical cyclones, specifically.</li></ol></p><p id='headerTTT'>2. Introduction</p><p id='bodyT'>This section discusses the weather and climate associated with cyclones and the anticyclones in the geographic extent of South Africa. The cyclones are characterized by low-pressure cells and the anticyclones by high-pressure cells. The low-pressure cells are associated with the rising of warm moist air, as the air rises it cools adiabatically resulting in wet weather conditions as compared to the high-pressure cells which are associated with dry weather conditions. <b>Figure 1</b> summarizes the air movement for cyclones. However, the next sub-sections will go in depth about the cyclones.The low-pressure cells that affect the South African weather and climate are:<br><br>(a) Mid-Latitude Cyclone,<br>(b) Tropical Cyclone, and<br>(c) The coastal Low.<br>The high-pressure cells affecting the South African weather and climate are:<br>(a) South Atlantic High-Pressure Cell (SAH),<br>(b) South Indian High-Pressure Cell (SIH),<br>(c) Kalahari High-Pressure Cell (KHPC).<br><img src=''></img></p>",
+
+    "teacher_notes10": ""}`,
+
+    "multimedia": 
+    `{"multimedia_content": "<p id='bodyText'>Hi </p>"}`,
+
+    "documents": 
+    `{"documents_content": "<p id='bodyText'>Hi  </p>"}`,
+
+    "mid": 
+    `{"midc": "<div><center><b><p id='coverText_1'>Funda Lula: Weather and Climate<br>SECTION 1: CYCLONES</b></center></div><div><center><img id='topo' src=s'C:/User/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/topo.jpg'</img></div></center></p><p id='coverText'><b>Lesson 01 - Mid-Latitude Cyclones</b><i><ul><li>General Charecteristics of a mid-latitude cyclone</li><li>Areas where mid-latitude cyclones form</li><li>Conditions necessary for the formation of tropical cyclones</li><li>Stages of development and weather conditions related to tropical cyclones</li><li>Weather patterns associated with cold, warm, and occluded fronts; and</li><li>Reading and interpreting satellite images and weather maps.</li></i></ul></p><p id='coverText'><b>Lesson 2: Tropical Cyclones</b><ul><i><li>General characteristics of a tropical cyclone</li><li>Areas where tropical cyclones form</li><li>Factors necessary for the formation of tropical cyclones</li><li>Stages of development</li><li>Associated weather patterns</li><li>Reading and interpreting satellite images and synoptic weather maps</li><li>Case study of one recent tropical cyclone that affected southern africa</li><li>Impact of tropical cyclones on human activities and the environment</li><li>Strategies that help to prepare for and manage the effects of tropical cyclones</li></i></ul><p id='coverText'><b>Lesson 3: Subtropical anticyclones and associated weather conditions</b><ul><i><li>Location of the high-pressure cells that affect South Africa</li><li>General characteristics of these high-pressure cells</li><li>Anticyclonic air circulation around South Africa, and its influence on weather and climate</li><li>Travelling disturbances associated with anticyclonic circulation: moisture front, line thunderstorms, coastal low-pressure systems and South African berg winds</li><li>Reading and interpreting satellite images and synoptic weather maps that illustrate weather associated with subtropical anticyclonic conditions</li></ul></p>"}`,
+}
+
+    // events occurance
+    var maps = JSON.parse(data.maps);
+    var lessons = JSON.parse(data.lessons);
+    var multimedia = JSON.parse(data.multimedia);
+    var documents = JSON.parse(data.documents);
+    var teacher_notes = JSON.parse(data.teacher_notes);
+    //var midLatLesson1 = JSON.parse(data.midLatLesson1);
+    var midc = JSON.parse(data.mid);
+
+    // maps
+    function mapsFunction() {    
+        document.getElementById("midp").innerHTML = maps.maps_content;  
+    }
+
+
+    // lessons
+    function lessonsFunction() {
+        document.getElementById("tropp").innerHTML = lessons.lessons_content;
+    }
+
+    function midLatitudeLesson1() {
+        document.getElementById('page1').innerHTML = teacher_notes.teacher_notes1;
+        document.getElementById('page2').innerHTML = "<div class='pageContainer'>" + teacher_notes.teacher_notes2 + '</div>';
+        document.getElementById('page3').innerHTML = "<div class='pageContainer'>" + teacher_notes.teacher_notes3 + '</div>';
+        document.getElementById('page4').innerHTML = "<div class='pageContainer'>" + teacher_notes.teacher_notes4 + '</div>';
+        document.getElementById('page5').innerHTML = "<div class='pageContainer'>" + teacher_notes.teacher_notes5 + '</div>';
+        document.getElementById('page6').innerHTML = "<div class='pageContainer'>" + teacher_notes.teacher_notes6 + '</div>';
+        document.getElementById('page7').innerHTML = "<div class='pageContainerl'>" + teacher_notes.teacher_notes7 + '</div>';
+        document.getElementById('page8').innerHTML = "<div class='pageContainerl'>" + teacher_notes.teacher_notes8 + '</div>';
+        document.getElementById('page9').innerHTML = "<div class='pageContainer'>" + teacher_notes.teacher_notes9 + '</div>';
+    }
+
+    // multimedia
+    function multimediaFuction() {    
+        document.getElementById("subtrop").innerHTML = multimedia.multimedia_content;    
+    }
+
+    // documents
+    function documentsFunction() {
+        document.getElementById("page1").innerHTML = documents.documents_content;
+    }
+
+    document.getElementById("page1").innerHTML = midc.midc;
+    
+    </script>
 </html>
