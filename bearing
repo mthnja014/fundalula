@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Bearing</title>
+	<style>
+	#myCanvas {
+	position: absolute;
+	top: 10px;
+	}
+	
+	#pht {
+	position: absolute;
+	top: 10px;	
+	}
+	
+	#outp {
+	position: absolute;
+	top: 600px;
+	}
+	</style>
+<body>
+<img src='2627BB_1_50-000-Topo-Map_GEO.jpg' id='pht' width='419' height='579'></img>
+<canvas id='myCanvas' width='419' height='579' style='border: 0px;'></canvas>
+<p id='outp'></p>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        let startPoint, endPoint;
+
+        canvas.addEventListener('mousedown', handleMouseDown);
+
+        function handleMouseDown(event) {
+		
+		    var rect = canvas.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+			
+            if (!startPoint) {
+                // Set the starting point
+                startPoint = { x: event.clientX - canvas.offsetLeft, y: event.clientY - canvas.offsetTop };
+            } else {
+                // Set the ending point
+                endPoint = { x: event.clientX - canvas.offsetLeft, y: event.clientY - canvas.offsetTop };
+
+                // Calculate the bearing
+                var bearing = calculateBearing(startPoint, endPoint);
+				
+				
+				drawLine(startPoint, endPoint);
+
+                // Reset points for the next line
+                startPoint = null;
+                endPoint = null;
+            }
+        }
+		
+
+			function calculateBearing(start, end) {
+            var deltaX = Math.pow(end.x, 1) - Math.pow(start.x, 1);
+            var deltaY = Math.pow(end.y, 1) - Math.pow(start.y, 1);
+			var hyp = Math.sqrt(Math.pow(Math.abs(deltaX), 2) + Math.pow(Math.abs(deltaY), 2));
+			
+			
+			var angle = Math.atan(Math.pow(deltaY, 1)/Math.pow(deltaX, 1));
+			
+			var angle1 = Math.abs(Math.pow(angle, 1)) + Math.PI/Math.pow(180, 1)*Math.pow(90, 1);  //+dy and +dx
+			var angle1d = Math.pow(angle1, 1)*180/Math.PI;
+			
+			var angle2 = Math.PI/Math.pow(180, 1)*Math.pow(270, 1) - Math.abs(Math.pow(angle, 1)); // +dy and -dx
+			var angle2d = Math.pow(angle2, 1)*180/Math.PI;
+			
+			var angle3 = Math.PI/Math.pow(180, 1)*Math.pow(270, 1) + Math.abs(Math.pow(angle, 1)); // -dy and -dx
+			var angle3d = Math.pow(angle3, 1)*180/Math.PI;
+			
+			var angle4 = Math.PI/Math.pow(180, 1)*Math.pow(90, 1) - Math.abs(Math.pow(angle, 1)); // -dy and +dx
+			var angle4d = Math.pow(angle4, 1)*180/Math.PI;
+
+            if (deltaX > 0 && deltaY > 0) {
+            document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle1d) + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+			
+            }else if (deltaX < 0 && deltaY > 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle2d) + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+			
+			}else if (deltaX < 0 && deltaY < 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle3d) + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+
+			}else if (deltaX > 0 && deltaY < 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle3d) + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+			
+			}else if (deltaX == 0 && deltaY < 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle4d) + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+
+			}else if (deltaX == 0 && deltaY < 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + "90" + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+
+			}else if (deltaX == 0 && deltaY > 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + "270" + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+
+			}else if (deltaX == 0 && deltaY == 0) {
+			document.getElementById('outp').innerHTML = "Bearing : " + "0/360" + " degrees";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+			
+			}else
+			document.getElementById('outp').innerHTML = "error";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.beginPath();
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "red";
+            ctx.stroke();
+			
+			startPoint = null;
+            endPoint = null;
+			}
+
+    </script>
+</body>
+</html>
+
