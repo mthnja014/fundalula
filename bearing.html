@@ -6,7 +6,12 @@
     <title>Calculate Bearing</title>
 	<style>
 	#myCanvas {
-	position: absolute;
+	position: fixed;
+	top: 10px;
+	}
+
+	#myCanvas2 {
+	position: fixed;
 	top: 10px;
 	}
 	
@@ -16,17 +21,205 @@
 	}
 	
 	#outp {
-	position: absolute;
+	position: fixed;
 	top: 600px;
+	background-color: bisque;
+	}
+
+	#btn {
+		position: fixed;
+		top: 10px;
 	}
 	</style>
 <body>
-<img src='2627BB_1_50-000-Topo-Map_GEO.jpg' id='pht' width='419' height='579'></img>
-<canvas id='myCanvas' width='419' height='579' style='border: 0px;'></canvas>
+<img src='topo_map.jpeg' id='pht' width='2245' height='3179'></img>
+<canvas id='myCanvas' width='2245' height='3179' style='border: 1px;'></canvas>
+<button id='btn' onclick="clear_rect()">Clear Screen</button>
 <p id='outp'></p>
     <script>
+
         var canvas = document.getElementById('myCanvas');
-        var ctx = canvas.getContext('2d');
+
+        var context = canvas.getContext('2d');
+
+		window.onload = function () {
+var canvas = document.getElementById ("myCanvas") ;
+var context = canvas.getContext ("2d") ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
+
+cn2 = can.getContext("2d");
+grd2 = cn2.createRadialGradient(0,400,150,400,0, 150);
+grd2.addColorStop(0, "black");
+
+cn2.fillStyle=grd2;
+cn2.font="bold 20px Arial";
+cn2.fillText("N", 142, 10);
+cn2.fillText("S", 142, 320);
+cn2.fillText("E", 300, 155);
+
+
+
+		}
         let startPoint, endPoint;
 
         canvas.addEventListener('mousedown', handleMouseDown);
@@ -79,99 +272,1715 @@
 
             if (deltaX > 0 && deltaY > 0) {
             document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle1d) + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 			
             }else if (deltaX < 0 && deltaY > 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle2d) + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 			
 			}else if (deltaX < 0 && deltaY < 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle3d) + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 
 			}else if (deltaX > 0 && deltaY < 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle3d) + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 			
 			}else if (deltaX == 0 && deltaY < 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + Math.round(angle4d) + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			ccontext.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 
 			}else if (deltaX == 0 && deltaY < 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + "90" + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 
 			}else if (deltaX == 0 && deltaY > 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + "270" + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 
 			}else if (deltaX == 0 && deltaY == 0) {
 			document.getElementById('outp').innerHTML = "Bearing : " + "0/360" + " degrees";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 			
 			}else
 			document.getElementById('outp').innerHTML = "error";
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.beginPath();
-            ctx.moveTo(start.x, start.y);
-            ctx.lineTo(end.x, end.y);
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
-            ctx.stroke();
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath();
+            context.moveTo(start.x, start.y);
+            context.lineTo(end.x, end.y);
+			context.lineWidth = 1;
+			context.strokeStyle = "red";
+            context.stroke();
+
+			context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
 			
 			startPoint = null;
             endPoint = null;
 			}
 
+			function clear_rect() {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (187.5, 75) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (187.5, 75) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (225, 187.5) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (225, 187.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (112.5, 225) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (112.5, 225) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (75, 112.5) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (75, 112.5) ;
+context.fillStyle = "rgb(255, 210, 50)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke () ;
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 37.5) ;
+context.lineTo (112.5, 75) ;
+context.lineTo (150, 0) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (37.5, 262.5) ;
+context.lineTo (75, 187.5) ;
+context.lineTo (0, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 262.5) ;
+context.lineTo (187.5, 225) ;
+context.lineTo (150, 300) ;
+context.lineTo (150, 150) ;
+context.fillStyle = "rgb(255, 255, 200)" ;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+context.beginPath () ;
+context.moveTo (150, 150) ;
+context.lineTo (262.5, 37.5) ;
+context.lineTo (225, 112.5) ;
+context.lineTo (300, 150) ;
+context.lineTo (150, 150) ;
+context.fillStyle=grd;
+context.fill () ;
+context.lineWidth = 1 ;
+context.strokeStyle = "grey" ;
+context.stroke ();
+
+
+var can = document.getElementById ("myCanvas") ;
+var cn = can.getContext ("2d") ;
+var grd = cn.createRadialGradient(0,300,150,300,0, 150);
+grd.addColorStop(0, "grey");
+
+cn.fillStyle=grd;
+cn.font="10px Arial";
+cn.fillText("Esr", 142, 20);
+cn.fillText("i South", 135, 40);
+cn.fillText(" Africa Esri", 125, 60);
+cn.fillText("South Africa Esri South Africa Esri South", 60, 80);
+cn.fillText("South Africa Esri South Africa Esri S", 69, 100);
+cn.fillText("outh Africa Esri South Esri Sout", 78, 120);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South", 30, 140);
+cn.fillText("Africa Esri South Africa Esri South Africa Esri South Af", 30, 160);
+cn.fillText("ca Esri South Africa Esri South Africa E",60 , 180);
+cn.fillText("ri South Africa Esri South Africa Es",70 , 200);
+cn.fillText("ri South Africa Esri South Africa Esri S",65 , 220);
+cn.fillText("outh",60 , 240);
+cn.fillText("Africa Esri",122 , 240);
+cn.fillText("South",220 , 240);
+cn.fillText("Africa E",130 , 260);
+cn.fillText("sri",145 , 280);
+
+			document.getElementById('outp').innerHTML = "";
+			
+			}
+
     </script>
 </body>
 </html>
-
