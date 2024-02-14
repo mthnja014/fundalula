@@ -209,6 +209,43 @@
             padding-left: 0%;
             border-radius: 5%;
             background-color: rgb(0, 0, 255, 0.5);
+            width: 5cm;
+            border-radius: 20px;
+        }
+
+        #maps:hover {
+            background-color: rgb(0, 255, 0);
+        }
+
+        #hm {
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 222, 255, 0.5);
+            margin-left: 0.5cm;
+            margin-top: 0.5cm;
+            width: 4cm;
+            height: 0.7cm;
+            border-radius: 20px;
+        }
+
+        #hm:hover {
+            background-color: rgb(0, 0, 255);
+        }
+
+        #hm1 {
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 222, 255, 0.5);
+            margin-left: 0.5cm;
+            width: 4cm;
+            height: 0.7cm;
+            border-radius: 20px;
+        }
+
+        #hm1:hover {
+            background-color: rgb(0, 0, 255);
+        }
+
+        #hom {
+            margin-top: -0.5cm;
         }
 
             #tropical{
@@ -253,11 +290,21 @@
             width: 15cm;
             }
 
-#bearing {
+            #bearing {
             background-color: red;
             border: blue;
             height: 50px;
             width: 150px;
+            }
+
+            #sub {
+                background-color: blue;
+                color: white;
+            }
+
+            #sub:hover {
+                background-color: red;
+                color: black;
             }
 
     </style>
@@ -279,7 +326,8 @@
         <div><button type="button" id="subtr_btn" onclick="documentsFunction()"><img id="content-img" src="documents.jpg"></img></button>
             <p id="subtrop"></p>
         </div>
-    </fieldset>
+    </fieldset> 
+
     <div id="top-rib">
         <button id="bearing" onclick="location.href='bearing.html'">Bearing</button><img src= "C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/top_rib.jpg"></img>
     </div><br>
@@ -326,7 +374,10 @@
     `{"maps_content": "<button onclick='midLatitudeMaps()' id='maps'>Mid Latitude Cyclones Maps</button><br><button id='maps' onclick='tropicalMaps()'>Tropical Cyclones Maps</button><br><button id='maps' onclick='subTropicalMaps()'>Sub-tropical Cyclones Maps</button>"}`,
 
     "lessons": 
-    `{"lessons_content": "<button onclick='learnersNotes()' id='maps'>Learner's Notes</button><br><button id='maps' onclick='homework()'>Homework</button><br><button id='maps' onclick='subTropicalMaps()'></button>"}`,
+    `{"lessons_content": "<button onclick='learnersNotes()' id='maps'>Learner's Notes</button><br><button id='maps' onclick='homework()'>Homework</button><p id='hom'></p><button id='maps' onclick='subTropicalMaps()'>Activities</button>"}`,
+
+    "bts":
+    `{"bts_content": "<button onclick='homeworkMid()' id='hm'>Mid-Latitude Cyclones</button><br><button onclick='homeworkTrop()' id='hm1'>Tropical Cyclones</button><br><button onclick='homeworkSubtr()' id='hm1'>Sub-Tropical Cyclones</button>"}`,
 
     //Teacher notes
 
@@ -386,7 +437,19 @@
     "teacher_notes27": "<p id='headerT2'><b>3.3.5 Coastal low-pressure systems</b></p><p id='bodyT'>These low-pressure cells form during both winter and summer. The movement of the cell's air is in a clockwise direction. Different weather can be experienced on either side of the low-pressure cell. Offshore winds can form on the one side of the low-pressure cell causing warmer but drier weather (wind move from land to sea). Onshore winds can form on the other side where one will experience rain along the coastline (wind move from sea to land). These low-pressure cells will move from west to east along the coast. <b>Figure 20</b> briefly shows the coastal low-pressure system.</p><p id='bodyT'><img src='coastal_low.png' width=464 height=195></img><br><b>Figure 20: </b><i>The coastal low-pressure system.</i></p><br><p id='headerT1'><b>3.3.6 South African berg winds</b></p><p id='bodyT'><img src='berg_winds.png' ></img><br><b>Figure 21: </b><i>South African Berg Winds</i></p>"}`,
 
     "lhomework":
-    `{"homework1": "<center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 1: Mid-Latitude Cyclones</b></p></center><p id='bodyT'><b>Please answer the following questions in the spaces provided below.</b><br>Study the image describing cold and warm front conditions thoroughly and answer the questions that follow.<br><img src='mid1_home.jpg' width=485 height=280></img><br><br>1.1 Identify the types of fronts experienced at <b>A</b> and <b>B</b>.<br><textarea cols=50 rows=2 id=''></textarea><br><br></p><p id='bodyT'>1.2 is <b>C</b> the cold or warm sector? Give a reason for your answer</p>"}`,
+    `{"homework1": "<center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 1: Mid-Latitude Cyclones</b></p></center><p id='bodyT'><b>Please answer the following questions in the spaces provided below.</b><br>Study the image describing cold and warm front conditions thoroughly and answer the questions that follow.<br><img src='mid1_home.jpg' width=485 height=280></img><br><br>1.1 Identify the types of fronts experienced at <b>A</b> and <b>B</b>.<br><textarea cols=70 rows=3 id='n1.1'></textarea><br><br></p><p id='bodyT'>1.2 is <b>C</b> the cold or warm sector? Give a reason for your answer<br><textarea cols=70 rows=4 id='n1.2'></textarea><br><br>1.3 Explain how Cumulonimbus clouds form in front of the cold front (<b>A</b>) by referring to <b>D</b> AND <b>G</b>.<br><textarea cols=70 rows=4 id='n1.3'></textarea><br><br>1.4 Will <b>B</b> experience light or heavy rainfall? Give a reason for your answer.<br><textarea cols=70 rows=4 id='n1.3'></textarea><br></p>",
+
+    "homework2": "<p id='bodyT1'>1.5 Give the name of the cloud at <b>F</b>.<br><textarea rows=1 cols=70 id='n1.5'></textarea></p><br><p id='bodyT'><b>Question 2</b><br><br>Study the images of the types of occlusion fronts and answer the questions by choosing the correct term out of the box. <b>You are allowed to use a word more than once</b>.<br><img src='question2.jpg' width=554 height=119></img><br><center><img src='question2_1.png' width=442 height=293></img></center></p><br><br><p id='bodyT'>2.1 <b>Image one</b> displays the 1. <input type='text' id='n2.1.1'></input> occlusion where the 2. <input type='text' id='n2.1.2'></input> air is in front of the 3. <input type='text' id='n2.1.3'></input> air. <b>A</b> will be classified as the 4. <input type='text' id='n2.1.4'></input> and <b>B</b> as the 5. <input type='text' id='n2.1.5'></input>. The rising of warm air causes 6. <input type='text' id='n2.1.6'></input> clouds to form.<br><br>2.2 <b>Image two</b> displays the 1. <input type='text' id='n2.2.1'></input> occlusion where the 2. <input type='text' id='n2.2.2'></input> air is in front of the 3. <input type='text' id='n2.2.3'></input> air. <b>C</b> will be classified as the 4. <input type='text' id='n2.2.4'></input> and <b>D</b> as the 5. <input type='text' id='n2.2.5'></input>. The rising of warm air causes 6. <input type='text' id='n2.2.6'></input> clouds to form.<br><br><input id='sub' type = 'submit' value='Submit Mid Latitude Cyclones'></input></p>",
+
+    "homework3": "<center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 2:Tropical Cyclones</b></p></center><p id='bodyT'>Read the following information graph and answer the questions that follow.<br><b>Question 1</b><br><b>DESCRIPTION OF THE DISASTER</b> <img src='tropical_homework1.png' width=250 height=147 style='float:right'></img>Tropical Cyclone Eloise made landfall on 23 January 2021, 20 km south of Beira in Mozambique, as a category 2 tropical cyclone. Wind speeds of up to 160 km/h were recorded. Tropical Cyclone Eloise also caused heavy rainfall with 250 mm of rain in 24 hours. Other areas were already flooded ahead of Eloise's landfall, resulting in thousands of displaced people.<br><br><img src='tropical_homework2.png' width=518 height=399></img><br><br>1.1. How many cyclones were there before tropical cyclone Eloise?<br><textarea id='t1.1' cols=70 rows=1></textarea><br><br>Complete the following sentence with the correct cardinal directions. <br>Tropical cyclone Eloise moves from <input type='text' id='t1.21'></input> to <input type='text' id='t1.22'></input>.</p>",
+
+    "homework4": "<p id='bodyT1'>3.3 Give the date and time where tropical cyclone Eloise experienced maximum wind speed.<br><textarea cols=70 rows=1 id='t3.3'></textarea><br><br>3.4 Looking at the image above explain why the wind speed decreased from 19 Jan (83km/h) to 20 Jan (65km/h).<br><textarea cols=70 rows=2 id='t3.4'></textarea><br><br>3.5 Give the name for tropical cyclones that develop in the Japan/eastern China area?<br><textarea cols=70 rows=1 id='t1.5'></textarea><br><br><input type='submit' id='sub' value='Submit Tropical Cyclones'></input></p>",
+
+    "homework5": "<center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 3:Sub-Tropical Cyclones</b></p></center><p id='bodyT'>Study the image containing anticyclones thoroughly and answer the questions that follow in the provided spaces.<br><b>Question 1</b><br><center><img src='subtropical_homework1.png' width='419' height='208'></img><br><img src='subtropical_homework2.png' width=428 height=165></img></center></p><p id='bodyT'>1.1 State whether anticyclones are low-pressure or high-pressure systems and then give the name of <b>B</b>.<br><textarea id='s1.1' cols=70 rows=2></textarea><br><br>1.2 In which season is <b>B</b> most prominent over South Africa and explain your answer by referencing the ITCZ.<br><textarea id='s1.2' cols=70 rows=4></textarea><br><br>1.3 What is the name of the layer that forms when <b>B</b> is present over South Africa?<textarea id='s1.3' rows=1 cols=70></textarea></p>",
+
+    "homework6": "<p id='bodyT1'><b>Question 2</b><br>Study the image and choose a word from the box to complete the following questions. Each word may only be used once.<center><img src='subtropical_homework3.png' width=396 height=183></img><br><img src='subtropical_homework4.png' width=554 height=135></img></center></p><p id='bodyT'>2.1 The (a) <input type='text' id='s2.1a'></input> anticyclone is on the west side of South Africa and the (b) <input type='text' id='s2.1b'></input> anticyclone is east of South Africa.<br><br>5.2 (c) <input type='text' id='s2.1c'></input> represents the dashed line.<br><br>5.3 (d) <input type='text' id='s2.1d'></input> air moves from 1, westward to the dashed line and (e) <input type='text' id='s2.1e'> air moves from 2, eastward to the dashed line. <br><br>2.4 After these two air masses met at the dashed line (f) <input type='text' id='s2.1f'> form as a result.<br><br>2.5 These storms can cause (g) <input type='text' id='s2.1f'></input> and (h) <input type='text' id='s2.1h'>.</p>",
+
+    "homework7": "<p id='bodyT1'><b>Question 3</b><br>In the provided table give three differences between summer and winter synoptic maps<br><center><img src='subtropical_homework5.png' width=405 height=231></img><img src='subtropical_homework6.png' width=405 height=231></img></center><br><br><table><tr><td><b>summer</b></td><td><b>Winter</b></td></tr><tr><td>e.g. summer causes moisture front/boundary and line thunderstorms.</td><td>Has Berg winds as a result.</td></tr><tr><td><textarea id='s1t' cols=35 rows=3></textarea></td><td><textarea id='s2t' cols=35 rows=3></textarea></td></tr><tr><td><textarea id='s3t' cols=35 rows=3></textarea></td><td><textarea id='s4t' cols=35 rows=3></textarea></td></tr><tr><td><textarea id='s5t' cols=35 rows=3></textarea></td><td><textarea id='s6t' cols=35 rows=3></textarea></td></tr></table></p>"}`,
 
     "multimedia": 
     `{"multimedia_content": "<p id='bodyText'>Hi </p>"}`,
@@ -401,6 +464,7 @@
     // events occurance
     var maps = JSON.parse(data.maps);
     var lessons = JSON.parse(data.lessons);
+    var bts = JSON.parse(data.bts);
     var multimedia = JSON.parse(data.multimedia);
     var documents = JSON.parse(data.documents);
     var teacher_notes = JSON.parse(data.teacher_notes);
@@ -450,6 +514,10 @@
     }
 
     function homework() {
+        document.getElementById("hom").innerHTML = bts.bts_content;
+    }
+
+    function homeworkMid() {
         document.querySelectorAll('*').forEach(function(element) {
         element.removeAttribute('class');
     });
@@ -482,6 +550,81 @@
     document.getElementById('page27').innerHTML = '';
     
     document.getElementById('page1').innerHTML = "<div class='pageContainer'>" + lhomework.homework1 + '</div>';
+    document.getElementById('page2').innerHTML = "<div class='pageContainer'>" + lhomework.homework2 + '</div>';
+    }
+
+
+    function homeworkTrop() {
+        document.querySelectorAll('*').forEach(function(element) {
+        element.removeAttribute('class');
+    });
+    document.getElementById('page1').innerHTML = '';
+    document.getElementById('page2').innerHTML = '';
+    document.getElementById('page3').innerHTML = '';
+    document.getElementById('page4').innerHTML = '';
+    document.getElementById('page5').innerHTML = '';
+    document.getElementById('page6').innerHTML = '';
+    document.getElementById('page7').innerHTML = '';
+    document.getElementById('page8').innerHTML = '';
+    document.getElementById('page9').innerHTML = '';
+    document.getElementById('page10').innerHTML = '';
+    document.getElementById('page11').innerHTML = '';
+    document.getElementById('page12').innerHTML = '';
+    document.getElementById('page13').innerHTML = '';
+    document.getElementById('page14').innerHTML = '';
+    document.getElementById('page15').innerHTML = '';
+    document.getElementById('page16').innerHTML = '';
+    document.getElementById('page17').innerHTML = '';
+    document.getElementById('page18').innerHTML = '';
+    document.getElementById('page19').innerHTML = '';
+    document.getElementById('page20').innerHTML = '';
+    document.getElementById('page21').innerHTML = '';
+    document.getElementById('page22').innerHTML = '';
+    document.getElementById('page23').innerHTML = '';
+    document.getElementById('page24').innerHTML = '';
+    document.getElementById('page25').innerHTML = '';
+    document.getElementById('page26').innerHTML = '';
+    document.getElementById('page27').innerHTML = '';
+    
+    document.getElementById('page1').innerHTML = "<div class='pageContainer'>" + lhomework.homework3 + '</div>';
+    document.getElementById('page2').innerHTML = "<div class='pageContainer'>" + lhomework.homework4 + '</div>';
+    }
+
+    function homeworkSubtr() {
+        document.querySelectorAll('*').forEach(function(element) {
+        element.removeAttribute('class');
+    });
+    document.getElementById('page1').innerHTML = '';
+    document.getElementById('page2').innerHTML = '';
+    document.getElementById('page3').innerHTML = '';
+    document.getElementById('page4').innerHTML = '';
+    document.getElementById('page5').innerHTML = '';
+    document.getElementById('page6').innerHTML = '';
+    document.getElementById('page7').innerHTML = '';
+    document.getElementById('page8').innerHTML = '';
+    document.getElementById('page9').innerHTML = '';
+    document.getElementById('page10').innerHTML = '';
+    document.getElementById('page11').innerHTML = '';
+    document.getElementById('page12').innerHTML = '';
+    document.getElementById('page13').innerHTML = '';
+    document.getElementById('page14').innerHTML = '';
+    document.getElementById('page15').innerHTML = '';
+    document.getElementById('page16').innerHTML = '';
+    document.getElementById('page17').innerHTML = '';
+    document.getElementById('page18').innerHTML = '';
+    document.getElementById('page19').innerHTML = '';
+    document.getElementById('page20').innerHTML = '';
+    document.getElementById('page21').innerHTML = '';
+    document.getElementById('page22').innerHTML = '';
+    document.getElementById('page23').innerHTML = '';
+    document.getElementById('page24').innerHTML = '';
+    document.getElementById('page25').innerHTML = '';
+    document.getElementById('page26').innerHTML = '';
+    document.getElementById('page27').innerHTML = '';
+    
+    document.getElementById('page1').innerHTML = "<div class='pageContainer'>" + lhomework.homework5 + '</div>';
+    document.getElementById('page2').innerHTML = "<div class='pageContainer'>" + lhomework.homework6 + '</div>';
+    document.getElementById('page3').innerHTML = "<div class='pageContainer'>" + lhomework.homework7 + '</div>';
     }
 
     // multimedia
