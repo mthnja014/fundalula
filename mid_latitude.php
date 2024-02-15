@@ -1,6 +1,6 @@
 <?php
-$host = "localhost";
-$username = "user";
+$host = "192.168.30.%";
+$username = "root";
 $password = "";
 
 // Create connection
