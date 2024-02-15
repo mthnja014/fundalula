@@ -314,7 +314,7 @@
     
 
     <fieldset id="menu"><legend id="legend_menu">Menu</legend>
-        <div><button type="button" id="mid_btn" onclick="mapsFunction()"><img src="maps.jpg" id="content-img"></img></button>
+        <div><button type="button" id="mid_btn" onclick="mapsFunction()"><img src="C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/maps.jpg" id="content-img"></img></button>
             <p id="midp"></p>
         </div>
         <div><button type="button" id="tropical_btn" onclick="lessonsFunction()"><img id="content-img" src="lessons.jpg"></img></button>
@@ -329,7 +329,7 @@
     </fieldset> 
 
     <div id="top-rib">
-        <button id="bearing" onclick="location.href='bearing.html'">Bearing</button><img src= "C:/Users/nmthiyane/OneDrive - Esri South Africa/njabulo/FundaLula/images/top_rib.jpg"></img>
+        <button id="bearing" onclick="location.href='bearing.html'">Bearing</button><img src= "top_rib.jpg"></img>
     </div><br>
 
    <fieldset id="intro"><legend id="legend_menu">Content</legend>
@@ -378,8 +378,6 @@
 
     "bts":
     `{"bts_content": "<button onclick='homeworkMid()' id='hm'>Mid-Latitude Cyclones</button><br><button onclick='homeworkTrop()' id='hm1'>Tropical Cyclones</button><br><button onclick='homeworkSubtr()' id='hm1'>Sub-Tropical Cyclones</button>"}`,
-
-    //Teacher notes
 
     "teacher_notes":
     `{"teacher_notes1": "<p id='headerT'><b>Table of Contents</b></p><div id='bodyT'><p>Declaration .................................................................................................................................i<br>Table of Contents .......................................................................................................................ii<br>List of Figures ............................................................................................................................iii</P>",
@@ -437,9 +435,9 @@
     "teacher_notes27": "<p id='headerT2'><b>3.3.5 Coastal low-pressure systems</b></p><p id='bodyT'>These low-pressure cells form during both winter and summer. The movement of the cell's air is in a clockwise direction. Different weather can be experienced on either side of the low-pressure cell. Offshore winds can form on the one side of the low-pressure cell causing warmer but drier weather (wind move from land to sea). Onshore winds can form on the other side where one will experience rain along the coastline (wind move from sea to land). These low-pressure cells will move from west to east along the coast. <b>Figure 20</b> briefly shows the coastal low-pressure system.</p><p id='bodyT'><img src='coastal_low.png' width=464 height=195></img><br><b>Figure 20: </b><i>The coastal low-pressure system.</i></p><br><p id='headerT1'><b>3.3.6 South African berg winds</b></p><p id='bodyT'><img src='berg_winds.png' ></img><br><b>Figure 21: </b><i>South African Berg Winds</i></p>"}`,
 
     "lhomework":
-    `{"homework1": "<center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 1: Mid-Latitude Cyclones</b></p></center><p id='bodyT'><b>Please answer the following questions in the spaces provided below.</b><br>Study the image describing cold and warm front conditions thoroughly and answer the questions that follow.<br><img src='mid1_home.jpg' width=485 height=280></img><br><br>1.1 Identify the types of fronts experienced at <b>A</b> and <b>B</b>.<br><textarea cols=70 rows=3 id='n1.1'></textarea><br><br></p><p id='bodyT'>1.2 is <b>C</b> the cold or warm sector? Give a reason for your answer<br><textarea cols=70 rows=4 id='n1.2'></textarea><br><br>1.3 Explain how Cumulonimbus clouds form in front of the cold front (<b>A</b>) by referring to <b>D</b> AND <b>G</b>.<br><textarea cols=70 rows=4 id='n1.3'></textarea><br><br>1.4 Will <b>B</b> experience light or heavy rainfall? Give a reason for your answer.<br><textarea cols=70 rows=4 id='n1.3'></textarea><br></p>",
+    `{"homework1": "<form action='mid_latitude.php' method='post'><center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 1: Mid-Latitude Cyclones</b></p></center><p id='bodyT'><b>Please answer the following questions in the spaces provided below.</b><br>Study the image describing cold and warm front conditions thoroughly and answer the questions that follow.<br><img src='mid1_home.jpg' width=485 height=280></img><br><form action='mid_latitude.php' method='post'><br>1.1 Identify the types of fronts experienced at <b>A</b> and <b>B</b>.<br><textarea cols=70 rows=3 id='n1.1' name='mid1'></textarea><br><br></p><p id='bodyT'>1.2 is <b>C</b> the cold or warm sector? Give a reason for your answer<br><textarea cols=70 rows=4 id='n1.2' name='mid2'></textarea><br><br>1.3 Explain how Cumulonimbus clouds form in front of the cold front (<b>A</b>) by referring to <b>D</b> AND <b>G</b>.<br><textarea cols=70 rows=4 id='n1.3' name='mid3'></textarea><br><br>1.4 Will <b>B</b> experience light or heavy rainfall? Give a reason for your answer.<br><textarea cols=70 rows=4 id='n1.4' name='mid4'></textarea><br><input type='submit' id='sub' value='Submit'></input></p>",
 
-    "homework2": "<p id='bodyT1'>1.5 Give the name of the cloud at <b>F</b>.<br><textarea rows=1 cols=70 id='n1.5'></textarea></p><br><p id='bodyT'><b>Question 2</b><br><br>Study the images of the types of occlusion fronts and answer the questions by choosing the correct term out of the box. <b>You are allowed to use a word more than once</b>.<br><img src='question2.jpg' width=554 height=119></img><br><center><img src='question2_1.png' width=442 height=293></img></center></p><br><br><p id='bodyT'>2.1 <b>Image one</b> displays the 1. <input type='text' id='n2.1.1'></input> occlusion where the 2. <input type='text' id='n2.1.2'></input> air is in front of the 3. <input type='text' id='n2.1.3'></input> air. <b>A</b> will be classified as the 4. <input type='text' id='n2.1.4'></input> and <b>B</b> as the 5. <input type='text' id='n2.1.5'></input>. The rising of warm air causes 6. <input type='text' id='n2.1.6'></input> clouds to form.<br><br>2.2 <b>Image two</b> displays the 1. <input type='text' id='n2.2.1'></input> occlusion where the 2. <input type='text' id='n2.2.2'></input> air is in front of the 3. <input type='text' id='n2.2.3'></input> air. <b>C</b> will be classified as the 4. <input type='text' id='n2.2.4'></input> and <b>D</b> as the 5. <input type='text' id='n2.2.5'></input>. The rising of warm air causes 6. <input type='text' id='n2.2.6'></input> clouds to form.<br><br><input id='sub' type = 'submit' value='Submit Mid Latitude Cyclones'></input></p>",
+    "homework2": "<form action='mid_latitude1.php' method='post'><p id='bodyT1'>1.5 Give the name of the cloud at <b>F</b>.<br><textarea rows=1 cols=70 id='n1.5' name='mid5'></textarea></p><br><p id='bodyT'><b>Question 2</b><br><br>Study the images of the types of occlusion fronts and answer the questions by choosing the correct term out of the box. <b>You are allowed to use a word more than once</b>.<br><img src='question2.jpg' width=554 height=119></img><br><center><img src='question2_1.png' width=442 height=293></img></center></p><br><br><p id='bodyT'>2.1 <b>Image one</b> displays the 1. <input type='text' id='n2.1.1' name='mid6'></input> occlusion where the 2. <input type='text' id='n2.1.2' name='mid7'></input> air is in front of the 3. <input type='text' id='n2.1.3' name='mid8'></input> air. <b>A</b> will be classified as the 4. <input type='text' id='n2.1.4' name='mid9'></input> and <b>B</b> as the 5. <input type='text' id='n2.1.5' name='mid10'></input>. The rising of warm air causes 6. <input type='text' id='n2.1.6' name='mid11'></input> clouds to form.<br><br>2.2 <b>Image two</b> displays the 1. <input type='text' id='n2.2.1' name='mid12'></input> occlusion where the 2. <input type='text' id='n2.2.2' name='mid13'></input> air is in front of the 3. <input type='text' id='n2.2.3' name='mid14'></input> air. <b>C</b> will be classified as the 4. <input type='text' id='n2.2.4' name='mid15'></input> and <b>D</b> as the 5. <input type='text' id='n2.2.5' name='mid16'></input>. The rising of warm air causes 6. <input type='text' id='n2.2.6' name='mid17'></input> clouds to form.<br><br><input id='sub' type = 'submit' value='Submit Mid Latitude Cyclones'></input></p>",
 
     "homework3": "<center><p id='homeworkHeader'>Homework</p><p id='homeworkSub'><b>Lesson 2:Tropical Cyclones</b></p></center><p id='bodyT'>Read the following information graph and answer the questions that follow.<br><b>Question 1</b><br><b>DESCRIPTION OF THE DISASTER</b> <img src='tropical_homework1.png' width=250 height=147 style='float:right'></img>Tropical Cyclone Eloise made landfall on 23 January 2021, 20 km south of Beira in Mozambique, as a category 2 tropical cyclone. Wind speeds of up to 160 km/h were recorded. Tropical Cyclone Eloise also caused heavy rainfall with 250 mm of rain in 24 hours. Other areas were already flooded ahead of Eloise's landfall, resulting in thousands of displaced people.<br><br><img src='tropical_homework2.png' width=518 height=399></img><br><br>1.1. How many cyclones were there before tropical cyclone Eloise?<br><textarea id='t1.1' cols=70 rows=1></textarea><br><br>Complete the following sentence with the correct cardinal directions. <br>Tropical cyclone Eloise moves from <input type='text' id='t1.21'></input> to <input type='text' id='t1.22'></input>.</p>",
 
@@ -471,6 +469,10 @@
     var lhomework = JSON.parse(data.lhomework);
     //var midLatLesson1 = JSON.parse(data.midLatLesson1);
     var midc = JSON.parse(data.mid);
+
+    //for php
+        
+    var mid_h = lhomework.homework1;
 
     // maps
     function mapsFunction() {    
@@ -551,6 +553,8 @@
     
     document.getElementById('page1').innerHTML = "<div class='pageContainer'>" + lhomework.homework1 + '</div>';
     document.getElementById('page2').innerHTML = "<div class='pageContainer'>" + lhomework.homework2 + '</div>';
+
+    
     }
 
 
@@ -638,6 +642,7 @@
     }
 
     document.getElementById("page1").innerHTML = "<div class='pageContainer'>" + midc.midc + '</div>';
+    //document.getElementById("page1").innerHTML = "<div class='pageContainer'>" + lhomework.homework1 + '</div>';
     
     </script>
 </html>
